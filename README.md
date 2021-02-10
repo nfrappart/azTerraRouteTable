@@ -9,7 +9,7 @@ module "rt-demoRouteTable" {
   RouteTableName        = "myRouteTable"
   RouteLocation         = "westeurope"
   RgName                = azurerm_resource_group.rg-demo.name
-  #BGPDisabled          = "false" #Optional. Default value is "false"
+  #BgpDisabled          = "false" #Optional. Default value is "false"
   #EnvironmentTag       = "staging" #Optional. Default value is "Sandbox"
   #UsageTag             = "application bla bla bla" #Optional. Default value is "PoC Usage Only"
   #OwnerTag             = "Whoever use this code" #Optional. Default value is "Nate"
