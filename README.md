@@ -1,20 +1,18 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Route Table Module
+Simple module to create a route table for User Defined Routes (UDR can be created using another module or azurerm resource)
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Usage Example :
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+```hcl
+module "rt-demoRouteTable" {
+  source                = "github.com/nfrappart/azTerraRouteTable?ref=v1.0.0"
+  RouteTableName        = "myRouteTable"
+  RouteLocation         = "westeurope"
+  RgName                = azurerm_resource_group.rg-demo.name
+  #BGPDisabled          = "false" #Optional. Default value is "false"
+  #EnvironmentTag       = "staging" #Optional. Default value is "Sandbox"
+  #UsageTag             = "application bla bla bla" #Optional. Default value is "PoC Usage Only"
+  #OwnerTag             = "Whoever use this code" #Optional. Default value is "Nate"
+  #ProvisioningDateTag  = timestamp()
+}
+```

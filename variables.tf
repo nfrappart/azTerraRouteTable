@@ -2,39 +2,29 @@
 # Module for routing table creation #
 #####################################
 
-#Variable declaration for Module
-
-#The Name of the route
 variable "RouteTableName" {
   type = string
 }
 
-#The RG in which the route table is attached to
 variable "RgName" {
   type = string
 }
 
-#The location of the route table
 variable "RouteLocation" {
   type = string
 }
 
-#Define if bgp route propagation is disable or not
-variable "BGPDisabled" {
+variable "BgpDisabled" {
   type = string
+  default = "false"
 }
-
-#Tag value to help identify the resource.
-#Required tag are EnvironmentTAg defining the type of
-#environment and
-#environment Tag usage specifying the use case of the environment
 
 variable "EnvironmentTag" {
   type    = string
   default = "Sandbox"
 }
 
-variable "EnvironmentUsageTag" {
+variable "UsageTag" {
   type    = string
   default = "Poc usage only"
 }
@@ -42,11 +32,6 @@ variable "EnvironmentUsageTag" {
 variable "OwnerTag" {
   type    = string
   default = "Nate"
-}
-
-variable "ProvisioningDateTag" {
-  type    = string
-  default = "Today :)"
 }
 
 variable "ProvisioningModeTag" {
